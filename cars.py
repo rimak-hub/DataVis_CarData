@@ -8,7 +8,7 @@ import mysql.connector
 import scipy
 from sklearn.linear_model import LinearRegression
 from main import MyLinReg
-print('Hi its rima:::')
+print('Hi its rima::::')
 sns.set_theme(style="ticks", color_codes=True)
 conn = mysql.connector.Connect(host='localhost', user='rimak',password='Crima1993',database='carData_db')
 
