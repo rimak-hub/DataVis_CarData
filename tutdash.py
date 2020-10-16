@@ -40,7 +40,31 @@ def update_val(value):
     #df = pd.read_csv("carData.csv")
 
     #description= df.describe(include= "all")
-    return  'blabla'
+    return  dcc.Markdown('''
+Data Desciption:
+
+             Year       Selling_Price     Present_Price       Kms_Driven       Owner
+
+count    301.000000      301.000000     301.000000          301.000000      301.000000
+
+mean   2013.627907        4.661296       7.628472          36947.205980      0.043189
+
+std       2.891554       5.082812       8.644115           38886.883882       0.247915
+
+min    2003.000000       0.100000       0.320000           500.000000        0.000000
+
+25%    2012.000000       0.900000       1.200000          15000.000000       0.000000
+
+50%    2014.000000       3.600000       6.400000         32000.000000       0.000000
+
+75%    2016.000000       6.000000       9.900000         48767.000000       0.000000
+
+max    2018.000000      35.000000      92.600000        500000.000000       3.000000
+
+
+''')
+
+
 
 
 
@@ -50,7 +74,7 @@ def update_val(value):
 @app.callback(Output('subtab2', 'children'),
               [Input('tab1', 'value')])
 def update_val(value):
-    return '44'
+    return 'Les variables selling_price , years, kms_Driven et Transmission sont corrélées'
 
 @app.callback(
     Output('subtab4', 'children'),
@@ -117,13 +141,15 @@ def update_value(input_data):
             )
             }
         ), dcc.Markdown('''
+score SVR linear kernel:  0.04186029418609705
 
-Dash supports [Markdown](http://commonmark.org/help).
+score sklearn linear regression:  0.0557625625111281
 
-Markdown is a simple way to write and format text.
-It includes a syntax for things like **bold text** and *italics*,
-[links](http://commonmark.org/help), inline `code` snippets, lists,
-quotes, and more.
+Numpy linear regression parameters:  [ 4.15091695e-01 -8.31178925e+02]
+
+Scipy Linear regression parameters:  0.4150916946355396 -831.1789245913283 0.2361409801604273 3.495472434809122e-05 0.0987819729376285
+
+
 ''')
 
 
@@ -173,13 +199,18 @@ def update_value(input_data):
             )
             }
         ),dcc.Markdown('''
+Multivariate linear regression sklearn
 
-Dash supports [Markdown](http://commonmark.org/help).
+input variables: year, Kms_driven, Transmission 
 
-Markdown is a simple way to write and format text.
-It includes a syntax for things like **bold text** and *italics*,
-[links](http://commonmark.org/help), inline `code` snippets, lists,
-quotes, and more.
+score: 0.20309987058925372
+
+Intercept: -1081.0946700995719
+
+Coefficients: [5.38542399e-01 1.74728571e-05 5.16506926e+00]
+
+Conclusion: la regression multivariée a un meilleur score que la regression lineaire simple et ainsi elle est plus adaptée à notre problème vu que le selling price et l'age de la voiture ne sont pas linerement coréllés.
+
 ''')
 
 
