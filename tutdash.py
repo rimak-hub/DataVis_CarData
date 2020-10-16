@@ -6,15 +6,12 @@ import dash_core_components as dcc
 from dash.dependencies import Input, Output
 import pandas_datareader.data as web
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
 import pandas as pd
-from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import dash_table
 import dash_table_experiments as dt
 app = dash.Dash()
-
+server= app.server
 
 
 # Create a Dash layout
